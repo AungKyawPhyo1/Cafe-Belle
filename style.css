@@ -1,0 +1,229 @@
+/* Global Body & Font Styles */
+html, body {
+  height: 100%; /* Ensures html and body take full height */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrollbar if sidebar goes off-screen */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  display: flex; /* Enables flexbox for layout */
+  flex-direction: column; /* Stacks content vertically */
+}
+
+/* General Styles */
+main {
+  flex-grow: 1; /* Allows main content to take available space, pushing footer down */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.container {
+  max-width: 1200px;
+}
+
+/* Navbar Styles */
+.navbar-blur {
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d63384;
+}
+
+.navbar-brand .bi-cup-hot-fill {
+  transition: transform 0.3s ease;
+}
+.navbar-brand:hover .bi-cup-hot-fill {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.brand-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #d63384;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  color: #343a40;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.fw-bold {
+  color: #d63384;
+}
+
+.navbar-toggler {
+  border-color: #d63384;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23d63384' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Carousel Styles */
+.carousel-item img {
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel-inner {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+/* Card Styles */
+.card {
+  transition: transform 0.2s ease-in-out;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #343a40;
+}
+
+.card-text {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+/* Button Styles */
+.btn-pink {
+  background-color: #d63384 !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-pink:hover {
+  background-color: #c2186a !important;
+  color: #ffffff !important;
+}
+
+.btn-outline-dark {
+  color: #343a40;
+  border-color: #343a40;
+}
+
+.btn-outline-dark:hover {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+/* ADDED THIS NEW CLASS */
+.bg-pink {
+  background-color: #d63384 !important;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #343a40;
+  color: #adb5bd;
+  padding: 2rem 0;
+  position: relative; /* Essential for z-index to work */
+  z-index: 1050; /* Ensures footer is below the sidebar if overlap occurs */
+}
+
+.footer h5 {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.footer-link {
+  color: #adb5bd;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Cart & Notification Styles */
+.cart-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #d63384; /* Changed to pink */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
+  z-index: 1056; /* Higher than sidebar */
+}
+
+#cartSidebar {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 350px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  z-index: 1055; /* Higher than footer, ensuring it's always on top */
+  overflow-y: auto;
+  transition: right 0.4s ease;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#cartSidebar.active {
+  right: 0;
+}
+
+#cartItems {
+  flex-grow: 1;
+}
+
+.cart-item {
+  border-bottom: 1px solid #dee2e6;
+  padding: 10px 0;
+}
+
+.cart-footer {
+  border-top: 1px solid #dee2e6;
+  padding-top: 15px;
+}
+
+/* Special Offers Page Styles */
+.highlight {
+  font-weight: bold;
+  color: #d63384;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .navbar-nav .nav-link {
+    font-size: 0.9rem;
+  }
+}
